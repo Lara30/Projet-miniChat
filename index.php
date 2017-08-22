@@ -1,5 +1,5 @@
 <?php
-//je déclare la variable $cookiePseudo
+//je déclare la variable $cookiePseudo toujours en premier avant l'Html
 $cookiePseudo = $_COOKIE['pseudo'] ;
 ?>
 
@@ -21,9 +21,9 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
             <div class="page-content">
                 <ul class="demo-list-item mdl-list" id="conversation">
                     <li class="mdl-list__item">
-                        <span class="mdl-list__item-primary-content">
-                            <strong><?php /**/ ?></strong>: <?php /**/ ?>
-                        </span>
+<!--                        <span class="mdl-list__item-primary-content">-->
+<!--                            <strong>--><?php ///**/ ?><!--</strong>: --><?php ///**/ ?>
+<!--                        </span>-->
                     </li>
                 </ul>
 
@@ -39,14 +39,13 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
     <!-- Wide card with share menu button -->
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Bonjour</h2>
+            <h2 class="mdl-card__title-text">Mini-Chat</h2>
         </div>
         <div class="mdl-card__supporting-text">
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                 <!--Récupération des 10 derniers messages!-->
-                <div class ="affichage">Afficher les messages</div>
             </a>
             <div class="liste">
                 <?php
