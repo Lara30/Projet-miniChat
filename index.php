@@ -26,12 +26,10 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
 <!--                        </span>-->
                     </li>
                 </ul>
-
                 <!--Création du formulaire!-->
                 <?php
                 include ("minichat.php");
                 ?>
-
             </div>
         </main>
     </div>

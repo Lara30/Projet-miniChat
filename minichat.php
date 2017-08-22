@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <title>Mini-chat</title>
-
 <!--    pour rafraichir une page automatiquement-->
     <script type="text/javascript">
         window.setTimeout("window.location.reload();",30000);
