@@ -12,17 +12,3 @@ foreach ($donnees as $reponse) {
     <?php }
     ?>
 </table>
-
-<?php
-//while ($donnees=$reponse-> fetch array($reponse))
-//{
-//    $message=$donnees['message'];
-//    $message=str_replace(":-)", " <img src="Projet-miniChat/images.png"/>",$message);
-//    $message = str_replace("héhé", " <img src="Projet-miniChat/images.jpeg()"/>",$message);
-//}
-//?>
-<!--<p><strong>--><?php //echo $donnees['pseudo']; ?><!--</strong> : --><?php //echo $message; ?><!--</p>-->
-<?php
-////fin de la boucle, le script est terminé !
-//}
-//?>
