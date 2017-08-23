@@ -14,7 +14,6 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
     <div class="mdl-layout mdl-js-layout">
         <main class="mdl-layout__content">
@@ -33,7 +32,6 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
             </div>
         </main>
     </div>
-
     <!-- Wide card with share menu button -->
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
@@ -47,11 +45,17 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
             </a>
             <div class="liste">
                 <?php
-                include ("select.php");
+              include("select.php");
                 ?>
+            </div>
+            <div>
+            <?php
+            include("pagination.php");
+            ?>
             </div>
         </div>
     </div>
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <!-- Material Design Light -->

@@ -1,7 +1,7 @@
-<!--Récupération des 10 derniers messages!-->
+<!--Récupération des....  derniers messages!-->
 <?php
 include ("connect.php");
-$reponse=$bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
+$reponse=$bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 5');
 //Affichage de chaque message (données protégées par htmlspecialchars)
 $donnees = $reponse->fetchAll();
 foreach ($donnees as $reponse) {

@@ -1,12 +1,12 @@
 .demo-card-wide.mdl-card {
     width: 512px;
-    top: 200px;
+    top: -20vw;
     margin-left: auto;
     margin-right: auto;
 }
 .demo-card-wide > .mdl-card__title {
     color: #fff;
-    height: 176px;
+    height: 76px;
     background: url('../Projet-miniChat/smile_cat.png') bottom right 15% no-repeat #46B6AC;
 }
 .demo-card-wide > .mdl-card__menu {
@@ -15,3 +15,5 @@
 .liste {
     color: mediumpurple;
 }
+
+

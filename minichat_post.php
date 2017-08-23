@@ -8,6 +8,7 @@ $message=str_replace('héhé', '<img src="../Projet-miniChat/images.jpeg"/>',$me
 
 //pour insérer dans la table le pseudo et le message avec les valeurs rentrées dans le formulaire
 $req=$bdd->prepare("INSERT INTO chat (pseudo, message) VALUES (:pseudo, :message)");
+
 $req->execute(array (
     'pseudo'=>$pseudo,
     'message'=>$message
@@ -23,5 +24,3 @@ header("location: index.php");
 //}
 //$reponse->closeCursor();
 ?>
-
-
