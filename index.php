@@ -41,21 +41,52 @@ $cookiePseudo = $_COOKIE['pseudo'] ;
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                <!--Récupération des 10 derniers messages!-->
             </a>
-            <div class="liste">
-                <?php
-              include("select.php");
-                ?>
-            </div>
-            <div>
-            <?php
-            include("pagination.php");
-            ?>
-            </div>
         </div>
     </div>
 
+    <?php
+    $totalMessages=$bdd->query("SELECT COUNT(id) AS nb_mess FROM chat");
+    $data=$totalMessages->fetchAll();
+    foreach ($data as $valeur) {
+        echo '<p>Nombre de messages sur le chat :'.$valeur->nb_mess.'</p>';
+    }
+    //on déclare la variable en disant que l'on veut que 5 messages/page
+    $nb_messages_par_page=5;
+    //la variable nbrePages doit tenir compte du nombre de messages postés
+    $nbrePages=$valeur->nb_mess;
+    //on calcule ainsi le nombre de pages (en tenant compte du nombre des messages postés et
+    //de leur affichage par page
+    $calculPages=ceil($nbrePages/$nb_messages_par_page);
+    echo '<p>Nombre de pages :'.$calculPages.'</p>';
+    for($i=1; $i<=$calculPages+1; $i++)
+        if ($i == $pageActu) {
+            echo "$i /";
+        }
+        else {
+            echo "<a href=\"index.php?page=$i\">$i</a><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\"></button>/";
+        }
+    {
+        //on veut rester sur la page index, mais afficher les messages correspondants aux
+    //pages suivantes
+    //si la variable page existe bien sinon c'est renvoyer à la page index
+    if (isset ($_GET['page']) && $_GET['page']>0 && $_GET['page']<=$calculPages){
+    $pageActu = $_GET['page'];
+    }
+    else {
+        $pageActu=1;
+    }
+    //Récupération des messages :
+    $reponse=$bdd->query("SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT ".(($pageActu-1)*$nb_messages_par_page),".$nb_messages_par_page");
+    $donnees=$reponse->fetchAll();
+    foreach ($donnees as $reponse) {
+    ?>
+    <table>
+        <p><strong>Pseudo : </strong><?php echo $reponse->pseudo;?></p>
+        <p><strong>Message : </strong><?php echo $reponse->message;?></p>
+        <?php }
+        ?>
+    </table>
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <!-- Material Design Light -->
